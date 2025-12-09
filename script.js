@@ -176,9 +176,11 @@ document.addEventListener("DOMContentLoaded", () => {
     /* label 생성 */
     const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
     label.classList.add("park-label");
-    label.setAttribute("x", park.cx + park.r - 300);
+    label.setAttribute("x", park.cx + park.r - 600);
     label.setAttribute("y", park.cy + 4);
     label.textContent = park.name.toUpperCase();
+    label.setAttribute("text-anchor", "end"); 
+
 
     group.appendChild(circle);
     group.appendChild(label);
