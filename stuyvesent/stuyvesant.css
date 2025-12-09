@@ -1,0 +1,118 @@
+/* 페이지 기본 (흰 배경 + Newsreader 폰트) */
+body {
+  background-color: #ffffff;
+  margin: 0;
+  font-family: "Newsreader", serif;
+}
+
+/* big-container: 흰 박스 */
+.big-container {
+  max-width: 1300px;
+  margin: 40px auto;
+  padding: 24px 32px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 8px;
+  position: relative;
+}
+
+/* 제목 + 브러쉬 */
+.page-title-wrapper {
+  position: fixed;
+  top: 120px;
+  right: 14%;   /* 전체 공통 */
+  width: 260px;
+  z-index: 50;
+  text-align: left;
+}
+
+/* 타이틀 — Orbitron / 얇게 / letter-spacing 3px / right:30% */
+.page-title {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 200;
+  font-size: 32px;
+  color: #151515;
+  letter-spacing: 3px;
+  margin: 0 0 8px 0;
+  position: relative;
+  z-index: 2;
+  right: 30%;
+}
+
+/* 브러쉬 이미지 위치 */
+.title-brush {
+  width: 420px;
+  display: block;
+  position: relative;
+  left: -90px;
+  top: -120px;
+  z-index: 1;
+}
+
+/* 왼쪽 이미지 컬럼 — margin-left 60px → 120px */
+.image-column {
+  width: 650px;
+  max-width: 75vw;
+  margin-left: 120px;
+  margin-bottom: 40px;
+  margin-top: 65px;
+}
+
+.image-column img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 24px;
+}
+
+/* 오른쪽 텍스트 박스 — right 14% → 19% */
+.text-fixed {
+  position: fixed;
+  top: 220px;
+  right: 19%;
+  width: 260px;
+  max-width: 28vw;
+  text-align: left;
+  color: #151515;
+}
+
+/* spot label */
+.spot-label {
+  font-size: 13px;
+  opacity: 0.7;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* 본문 텍스트 — Newsreader / 16px / line-height = 1.7 */
+.text-fixed p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+/* 반응형 (공통 규칙) */
+@media (max-width: 1200px) {
+  .big-container {
+    margin: 16px;
+    padding: 16px;
+  }
+
+  .image-column {
+    width: auto;
+    max-width: 90vw;
+    margin: 0 auto 20px auto;
+  }
+
+  .text-fixed,
+  .page-title-wrapper {
+    position: static;
+    width: auto;
+    max-width: 90vw;
+    margin: 0 auto 16px auto;
+    text-align: left;
+    right: auto;
+  }
+}

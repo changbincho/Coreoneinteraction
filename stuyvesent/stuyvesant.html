@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Stuyvesant Square Park</title>
+
+  <!-- Fonts -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Newsreader:wght@200;300;400;500&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Orbitron:wght@200;300;400;500;600&display=swap"
+  rel="stylesheet"
+/>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="stuyvesant.css">
+
+  <!-- JS -->
+  <script src="stuyvesant.js" defer></script>
+</head>
+
+
+<body>
+
+  <div class="big-container">
+
+    <!-- 제목 + 브러쉬 세트 -->
+    <div class="page-title-wrapper">
+      <h1 class="page-title">Stuyvesant Square Park</h1>
+      
+    </div>
+
+    <!-- 왼쪽: 이미지들 -->
+    <div class="image-column">
+      <img
+        src="images/stuyvesant1.jpg"
+        alt="Evening path in Stuyvesant Square Park"
+        data-label="Evening path and leaves"
+        data-text1="In the evening, the main path feels like a quiet corridor. The lamps switch on under the trees, and the ground is covered with yellow leaves—the color looked surprisingly beautiful in the dim light."
+        data-text2="I hear quiet conversations as people pass, and the leaves shift under footsteps. The traffic stays faint in the background."
+      >
+
+    
+
+      <img
+        src="images/stuyvesant2.jpg"
+        alt="Fountain and square in Stuyvesant Square Park"
+        data-label="Fountain and square"
+        data-text1="Near the fountain, the park opens up into a brighter space. The trees frame the red brick buildings, and fallen yellow leaves sit in patches around the square, giving the whole place a warm tone."
+        data-text2="I notice a mix of sounds—cars moving, people crossing the square, and short bits of conversation as they walk by."
+      >
+
+      <img
+        src="images/stuyvesant3.jpg"
+        alt="Stuyvesant statue in the center of the park"
+        data-label="Stuyvesant statue"
+        data-text1="Closer to the center, the Stuyvesant statue stands on its circle of stone. Yellow leaves are scattered around the base, catching the light and making the path curves feel softer as people walk past."
+        data-text2="I slow down near the statue, and the street noise feels a little more distant from here."
+      >
+    </div>
+
+    <!-- 오른쪽: 고정 텍스트 박스 (초기값 = 첫 이미지) -->
+    <div class="text-fixed">
+      <div id="current-spot" class="spot-label">
+        Evening path and leaves
+      </div>
+
+      <p id="paragraph1">
+        In the evening, the main path feels like a quiet corridor. The lamps turn on under the trees, and a layer of yellow leaves spreads across the ground.
+      </p>
+
+      <p id="paragraph2">
+        Most of the sound is soft—people talking in low voices on benches, the rustle of leaves when someone walks past, and distant traffic at the edge of the park.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
