@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* label 생성 */
     const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
     label.classList.add("park-label");
-    label.setAttribute("x", park.cx + park.r + 16);
+    label.setAttribute("x", park.cx + park.r - 200);
     label.setAttribute("y", park.cy + 4);
     label.textContent = park.name.toUpperCase();
 
