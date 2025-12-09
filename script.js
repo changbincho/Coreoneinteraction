@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ===========================================
      파크 리스트 (10개)
-     - 각 url 경로는 현재 GitHub 폴더 구조 기준
   =========================================== */
   const parks = [
     {
@@ -128,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   /* ===========================================
-     Info box + 텍스트 + 선 한 세트 생성
+     Info Box + 텍스트 + 선 생성
   =========================================== */
   const infoGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
   infoGroup.setAttribute("id", "park-info-group");
@@ -140,10 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const infoTitle = document.createElementNS("http://www.w3.org/2000/svg", "text");
   infoTitle.classList.add("info-title");
 
-  const infoAddress = document.createElementNS(
-    "http://www.w3.org/2000/svg",
-    "text"
-  );
+  const infoAddress = document.createElementNS("http://www.w3.org/2000/svg", "text");
   infoAddress.classList.add("info-line");
 
   const infoNote = document.createElementNS("http://www.w3.org/2000/svg", "text");
@@ -154,32 +150,29 @@ document.addEventListener("DOMContentLoaded", () => {
   infoGroup.appendChild(infoAddress);
   infoGroup.appendChild(infoNote);
 
-  const connector = document.createElementNS(
-    "http://www.w3.org/2000/svg",
-    "line"
-  );
+  const connector = document.createElementNS("http://www.w3.org/2000/svg", "line");
   connector.classList.add("info-connector");
 
-  // 지도 위에 info + 선 추가
   svg.appendChild(connector);
   svg.appendChild(infoGroup);
 
   /* ===========================================
-     파크 핫스팟 + 라벨 + 이벤트
+     핫스팟 만들기 + hover/pulse + click 이동
   =========================================== */
   parks.forEach((park) => {
     const group = document.createElementNS("http://www.w3.org/2000/svg", "g");
     group.classList.add("park-group");
     group.setAttribute("data-park-id", park.id);
 
-    // 원
+    /* circle 생성 */
     const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
     circle.classList.add("park-hotspot");
     circle.setAttribute("cx", park.cx);
     circle.setAttribute("cy", park.cy);
     circle.setAttribute("r", park.r);
+    circle.style.setProperty("--r", park.r); // pulse 애니메이션용
 
-    // 라벨
+    /* label 생성 */
     const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
     label.classList.add("park-label");
     label.setAttribute("x", park.cx + park.r + 16);
@@ -190,18 +183,16 @@ document.addEventListener("DOMContentLoaded", () => {
     group.appendChild(label);
     svg.appendChild(group);
 
-    // hover 시 info box 업데이트
+    /* hover 시 info box 업데이트 */
     const showInfo = () => {
       const boxX = park.infoX;
       const boxY = park.infoY;
 
-      // 박스 위치
       infoRect.setAttribute("x", boxX);
       infoRect.setAttribute("y", boxY);
       infoRect.setAttribute("width", INFO_BOX_WIDTH);
       infoRect.setAttribute("height", INFO_BOX_HEIGHT);
 
-      // 텍스트 위치 + 내용
       infoTitle.setAttribute("x", boxX + 24);
       infoTitle.setAttribute("y", boxY + 60);
       infoTitle.textContent = park.name.toUpperCase();
@@ -214,33 +205,37 @@ document.addEventListener("DOMContentLoaded", () => {
       infoNote.setAttribute("y", boxY + 130);
       infoNote.textContent = park.note || "";
 
-      // 박스 → 원으로 가는 선
       const boxAnchorX = boxX + INFO_BOX_WIDTH;
       const boxAnchorY = boxY + INFO_BOX_HEIGHT / 2;
 
-      const startX = boxAnchorX;
-      const startY = boxAnchorY;
-
-      connector.setAttribute("x1", startX);
-      connector.setAttribute("y1", startY);
+      connector.setAttribute("x1", boxAnchorX);
+      connector.setAttribute("y1", boxAnchorY);
       connector.setAttribute("x2", park.cx);
       connector.setAttribute("y2", park.cy);
 
-      infoGroup.classList.remove("info-hidden");
       infoGroup.classList.add("info-visible");
+      infoGroup.classList.remove("info-hidden");
       connector.style.opacity = "1";
     };
 
     const hideInfo = () => {
-      infoGroup.classList.remove("info-visible");
       infoGroup.classList.add("info-hidden");
+      infoGroup.classList.remove("info-visible");
       connector.style.opacity = "0";
     };
 
-    group.addEventListener("mouseenter", showInfo);
-    group.addEventListener("mouseleave", hideInfo);
+    /* hover */
+    group.addEventListener("mouseenter", () => {
+      showInfo();
+      circle.classList.add("pulsing"); // 🔥 pulse 시작
+    });
 
-    // 🔥 클릭하면 해당 엔트리 페이지로 이동
+    group.addEventListener("mouseleave", () => {
+      hideInfo();
+      circle.classList.remove("pulsing"); // 🔥 pulse 종료
+    });
+
+    /* click → 엔트리 이동 */
     group.addEventListener("click", () => {
       if (!park.url) return;
       window.location.href = park.url;
@@ -248,10 +243,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ===========================================
-     Alt + 클릭으로 SVG 좌표 찍기 (디버깅용)
+     ALT + click → SVG 좌표 출력 (디버그용)
   =========================================== */
   svg.addEventListener("click", (event) => {
-    if (!event.altKey) return; // ⌥ Option 안 누르면 무시
+    if (!event.altKey) return;
 
     const pt = svg.createSVGPoint();
     pt.x = event.clientX;
