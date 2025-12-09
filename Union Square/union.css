@@ -1,0 +1,117 @@
+/* =========================
+   기본 페이지 스타일
+   ========================= */
+body {
+  background-color: #ffffff;            /* ✔ 통일 규칙 */
+  margin: 0;
+  font-family: "Newsreader", serif;     /* ✔ 본문 폰트 통일 */
+}
+
+/* =========================
+   전체 컨테이너
+   ========================= */
+.big-container {
+  max-width: 1300px;
+  margin: 40px auto;
+  padding: 24px 32px;
+  background: #ffffff;                  /* ✔ 완전 흰색 */
+  border-radius: 8px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* =========================
+   제목 + 브러쉬
+   ========================= */
+.page-title-wrapper {
+  position: fixed;
+  top: 120px;
+  right: 14%;
+  width: 260px;
+  text-align: left;
+  z-index: 50;
+}
+
+.page-title {
+  font-family: "Orbitron", sans-serif;  /* ✔ Orbitron */
+  font-weight: 200;
+  font-size: 32px;
+  letter-spacing: 3px;
+  color: #151515;
+  margin: 0 0 8px 0;
+  position: relative;
+  right: 30%;                           /* ✔ 통일 규칙 */
+  z-index: 2;
+}
+
+.title-brush {
+  width: 420px;
+  position: relative;
+  left: -90px;
+  top: -120px;
+  z-index: 1;
+}
+
+/* =========================
+   왼쪽 이미지 컬럼
+   ========================= */
+.image-column {
+  width: 650px;
+  max-width: 75vw;
+  margin-left: 120px;                   /* ✔ 60 → 120px */
+  margin-top: 65px;
+  margin-bottom: 40px;
+}
+
+.image-column img {
+  width: 100%;
+  display: block;
+  margin-bottom: 24px;
+}
+
+/* =========================
+   RIGHT SIDEBAR
+   ========================= */
+.text-fixed {
+  position: fixed;
+  top: 220px;
+  right: 19%;                           /* ✔ 14% → 19% */
+  width: 260px;
+  max-width: 28vw;
+  text-align: left;
+  color: #151515;
+}
+
+.spot-label {
+  font-size: 13px;
+  opacity: 0.7;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.text-fixed p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;                     /* ✔ 통일 규칙 */
+  margin-bottom: 14px;
+}
+
+/* =========================
+   반응형
+   ========================= */
+@media (max-width: 1200px) {
+  .big-container {
+    margin: 16px;
+    padding: 16px;
+  }
+  .image-column {
+    width: auto;
+    margin: 0 auto 20px auto;
+    max-width: 90vw;
+  }
+  .page-title-wrapper,
+  .text-fixed {
+    position: static;
+    width: auto;
+    margin: 0 auto 16px auto;
