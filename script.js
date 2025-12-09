@@ -4,15 +4,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const svg = document.getElementById("Layer_1");
   if (!svg) return;
 
-  /* ==================================================
-     🧱 Info box 공통 설정
-  ================================================== */
+  /* ===========================================
+     공통 설정
+  =========================================== */
   const INFO_BOX_WIDTH = 1000;
   const INFO_BOX_HEIGHT = 160;
 
-  /* ==================================================
-     🗺 파크 리스트 (10개)
-  ================================================== */
+  /* ===========================================
+     파크 리스트 (10개)
+     - 각 url 경로는 현재 GitHub 폴더 구조 기준
+  =========================================== */
   const parks = [
     {
       id: "central-park",
@@ -23,9 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       infoX: 120.81,
       infoY: 626.38,
       address: "Manhattan, New York, NY",
-      url: "Central Park/Central Park.html"
-
-    
+      url: "Central Park/Central Park.html",
     },
     {
       id: "bryant-park",
@@ -36,9 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
       infoX: 260,
       infoY: 420,
       address: "Midtown, Manhattan",
-      url: "bryant park/bryant.html"
-
-     
+      url: "bryant park/bryant.html",
     },
     {
       id: "madison-square-park",
@@ -49,8 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       infoX: 200,
       infoY: 620,
       address: "Flatiron District, Manhattan",
-      url: "madison/entry 5.html"
-
+      url: "madison/entry 5.html",
     },
     {
       id: "union-square",
@@ -61,8 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
       infoX: 220,
       infoY: 820,
       address: "Union Square, Manhattan",
-     url: "Union Square/Union Square.html"
-
+      url: "Union Square/Union Square.html",
     },
     {
       id: "washington-square-park",
@@ -73,8 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
       infoX: 80,
       infoY: 555,
       address: "Greenwich Village, Manhattan",
-      url: "washingtonsquare/index.html"
-
+      url: "washingtonsquare/index.html",
     },
     {
       id: "tompkins-square-park",
@@ -85,8 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
       infoX: 300,
       infoY: 680,
       address: "East Village, Manhattan",
-     url: "tompkins/tompkins.html"
-
+      url: "tompkins/tompkins.html",
     },
     {
       id: "stuyvesant-square",
@@ -97,8 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
       infoX: 320,
       infoY: 520,
       address: "Gramercy / East 15th St",
-     url: "stuyvesent/stuyvesant.html"
-
+      url: "stuyvesent/stuyvesant.html",
     },
     {
       id: "battery-park",
@@ -109,8 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
       infoX: 20.19,
       infoY: 840.54,
       address: "Southern tip of Manhattan",
-     url: "battery park/battery.html"
-
+      url: "battery park/battery.html",
     },
     {
       id: "gantry-plaza-state-park",
@@ -121,8 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
       infoX: 68.28,
       infoY: 691.16,
       address: "Long Island City, Queens",
-      url: "gantrypark/gathernpark.html"
-
+      url: "gantrypark/gathernpark.html",
     },
     {
       id: "marsha-p-johnson-state-park",
@@ -133,31 +123,21 @@ document.addEventListener("DOMContentLoaded", () => {
       infoX: 360,
       infoY: 980,
       address: "Williamsburg, Brooklyn",
-     url: "Marsha/Marsha.html"
-
+      url: "Marsha/Marsha.html",
     },
   ];
 
-  /* ==================================================
-     Info Box + 텍스트 + 선 (공통 요소 하나 만들어두기)
-  ================================================== */
-  const infoGroup = document.createElementNS(
-    "http://www.w3.org/2000/svg",
-    "g"
-  );
+  /* ===========================================
+     Info box + 텍스트 + 선 한 세트 생성
+  =========================================== */
+  const infoGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
   infoGroup.setAttribute("id", "park-info-group");
   infoGroup.classList.add("info-hidden");
 
-  const infoRect = document.createElementNS(
-    "http://www.w3.org/2000/svg",
-    "rect"
-  );
+  const infoRect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
   infoRect.classList.add("info-box-rect");
 
-  const infoTitle = document.createElementNS(
-    "http://www.w3.org/2000/svg",
-    "text"
-  );
+  const infoTitle = document.createElementNS("http://www.w3.org/2000/svg", "text");
   infoTitle.classList.add("info-title");
 
   const infoAddress = document.createElementNS(
@@ -166,10 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   infoAddress.classList.add("info-line");
 
-  const infoNote = document.createElementNS(
-    "http://www.w3.org/2000/svg",
-    "text"
-  );
+  const infoNote = document.createElementNS("http://www.w3.org/2000/svg", "text");
   infoNote.classList.add("info-line");
 
   infoGroup.appendChild(infoRect);
@@ -183,31 +160,27 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   connector.classList.add("info-connector");
 
-  // SVG 맨 마지막에: 지도 < 타이틀 < (지금 이 그룹 + 선 + 핫스팟들)
+  // 지도 위에 info + 선 추가
   svg.appendChild(connector);
   svg.appendChild(infoGroup);
 
-  /* ==================================================
-     파크 핫스팟 + 라벨 + hover 이벤트
-  ================================================== */
+  /* ===========================================
+     파크 핫스팟 + 라벨 + 이벤트
+  =========================================== */
   parks.forEach((park) => {
     const group = document.createElementNS("http://www.w3.org/2000/svg", "g");
     group.classList.add("park-group");
     group.setAttribute("data-park-id", park.id);
 
-    const circle = document.createElementNS(
-      "http://www.w3.org/2000/svg",
-      "circle"
-    );
+    // 원
+    const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
     circle.classList.add("park-hotspot");
     circle.setAttribute("cx", park.cx);
     circle.setAttribute("cy", park.cy);
     circle.setAttribute("r", park.r);
 
-    const label = document.createElementNS(
-      "http://www.w3.org/2000/svg",
-      "text"
-    );
+    // 라벨
+    const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
     label.classList.add("park-label");
     label.setAttribute("x", park.cx + park.r + 16);
     label.setAttribute("y", park.cy + 4);
@@ -217,17 +190,18 @@ document.addEventListener("DOMContentLoaded", () => {
     group.appendChild(label);
     svg.appendChild(group);
 
+    // hover 시 info box 업데이트
     const showInfo = () => {
       const boxX = park.infoX;
       const boxY = park.infoY;
 
-      // 박스 위치 업데이트
+      // 박스 위치
       infoRect.setAttribute("x", boxX);
       infoRect.setAttribute("y", boxY);
       infoRect.setAttribute("width", INFO_BOX_WIDTH);
       infoRect.setAttribute("height", INFO_BOX_HEIGHT);
 
-      // 텍스트 위치 + 내용 업데이트
+      // 텍스트 위치 + 내용
       infoTitle.setAttribute("x", boxX + 24);
       infoTitle.setAttribute("y", boxY + 60);
       infoTitle.textContent = park.name.toUpperCase();
@@ -240,26 +214,12 @@ document.addEventListener("DOMContentLoaded", () => {
       infoNote.setAttribute("y", boxY + 130);
       infoNote.textContent = park.note || "";
 
-     // 선 좌표 업데이트
-const boxAnchorX = boxX + INFO_BOX_WIDTH;      // 박스 오른쪽 변 중앙
-const boxAnchorY = boxY + INFO_BOX_HEIGHT / 2;
+      // 박스 → 원으로 가는 선
+      const boxAnchorX = boxX + INFO_BOX_WIDTH;
+      const boxAnchorY = boxY + INFO_BOX_HEIGHT / 2;
 
-// 🔴 예전: 박스 안쪽 30% 지점에서 시작
-// const dx = park.cx - boxAnchorX;
-// const dy = park.cy - boxAnchorY;
-// const START_OFFSET = 0.3;
-// const startX = boxAnchorX + dx * START_OFFSET;
-// const startY = boxAnchorY + dy * START_OFFSET;
-
-// ✅ 새 버전: 박스 테두리에서 바로 시작
-const startX = boxAnchorX;
-const startY = boxAnchorY;
-
-connector.setAttribute("x1", startX);
-connector.setAttribute("y1", startY);
-connector.setAttribute("x2", park.cx);
-connector.setAttribute("y2", park.cy);
-
+      const startX = boxAnchorX;
+      const startY = boxAnchorY;
 
       connector.setAttribute("x1", startX);
       connector.setAttribute("y1", startY);
@@ -279,11 +239,17 @@ connector.setAttribute("y2", park.cy);
 
     group.addEventListener("mouseenter", showInfo);
     group.addEventListener("mouseleave", hideInfo);
+
+    // 🔥 클릭하면 해당 엔트리 페이지로 이동
+    group.addEventListener("click", () => {
+      if (!park.url) return;
+      window.location.href = park.url;
+    });
   });
 
-  /* ==================================================
-     🧪 Option(Alt) + 클릭으로 SVG 좌표 찍기
-  ================================================== */
+  /* ===========================================
+     Alt + 클릭으로 SVG 좌표 찍기 (디버깅용)
+  =========================================== */
   svg.addEventListener("click", (event) => {
     if (!event.altKey) return; // ⌥ Option 안 누르면 무시
 
