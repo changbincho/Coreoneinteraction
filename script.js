@@ -23,6 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
       infoX: 120.81,
       infoY: 626.38,
       address: "Manhattan, New York, NY",
+      url: "Central Park/Central Park.html"
+
     
     },
     {
@@ -34,6 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
       infoX: 260,
       infoY: 420,
       address: "Midtown, Manhattan",
+      url: "bryant park/bryant.html"
+
      
     },
     {
@@ -45,7 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
       infoX: 200,
       infoY: 620,
       address: "Flatiron District, Manhattan",
-      
+      url: "madison/entry 5.html"
+
     },
     {
       id: "union-square",
@@ -56,7 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
       infoX: 220,
       infoY: 820,
       address: "Union Square, Manhattan",
-     
+     url: "Union Square/Union Square.html"
+
     },
     {
       id: "washington-square-park",
@@ -67,7 +73,8 @@ document.addEventListener("DOMContentLoaded", () => {
       infoX: 80,
       infoY: 555,
       address: "Greenwich Village, Manhattan",
-      
+      url: "washingtonsquare/index.html"
+
     },
     {
       id: "tompkins-square-park",
@@ -78,7 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
       infoX: 300,
       infoY: 680,
       address: "East Village, Manhattan",
-     
+     url: "tompkins/tompkins.html"
+
     },
     {
       id: "stuyvesant-square",
@@ -89,7 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
       infoX: 320,
       infoY: 520,
       address: "Gramercy / East 15th St",
-     
+     url: "stuyvesent/stuyvesant.html"
+
     },
     {
       id: "battery-park",
@@ -100,7 +109,8 @@ document.addEventListener("DOMContentLoaded", () => {
       infoX: 20.19,
       infoY: 840.54,
       address: "Southern tip of Manhattan",
-     
+     url: "battery park/battery.html"
+
     },
     {
       id: "gantry-plaza-state-park",
@@ -111,7 +121,8 @@ document.addEventListener("DOMContentLoaded", () => {
       infoX: 68.28,
       infoY: 691.16,
       address: "Long Island City, Queens",
-      
+      url: "gantrypark/gathernpark.html"
+
     },
     {
       id: "marsha-p-johnson-state-park",
@@ -122,7 +133,8 @@ document.addEventListener("DOMContentLoaded", () => {
       infoX: 360,
       infoY: 980,
       address: "Williamsburg, Brooklyn",
-     
+     url: "Marsha/Marsha.html"
+
     },
   ];
 
