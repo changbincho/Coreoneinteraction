@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Madison Square Park</title>
+
+  <!-- 폰트: Cormorant + Ubuntu -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Ubuntu:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  >
+<!-- Newsreader -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:wght@200;300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+ <!-- Orbitron -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@200;400;600&display=swap"
+    rel="stylesheet"
+  />
+
+
+
+  <link rel="stylesheet" href="madison-square-park.css">
+  <script src="madison.js" defer></script>
+</head>
+
+<body>
+
+  <div class="big-container">
+
+    <!-- 제목 + 브러쉬 -->
+    <div class="page-title-wrapper">
+      <h1 class="page-title">Madison Square Park</h1>
+      
+    </div>
+
+    <!-- 왼쪽 이미지 컬럼 -->
+    <div class="image-column">
+
+
+      
+      <!-- 3. 잔디 + 나무 + 골드 루프 -->
+      <img
+        src="images/madison1.jpg"
+        alt="Grass lawn in Madison Square Park with tall buildings and a gold-topped tower rising behind the trees"
+        data-label="Lawn and skyline"
+        data-text1="Stepping back toward the open lawn, the trees frame the gold-topped tower and the surrounding buildings. From here, the park feels like a gentle foreground laid in front of the city’s sharp vertical lines."
+        data-text2="The sounds blend differently in this spot: footsteps crossing the path, kids shouting from the playground, the steady flow of traffic along the edge of the park. Everything overlaps into one constant rhythm."
+      >
+
+      <!-- 1. 연못/조각 주변 -->
+      <img
+        src="images/madison2.jpg"
+        alt="Round reflecting pool in Madison Square Park with plants in the center and people sitting around the edge"
+        data-label="Reflecting pool"
+        data-text1="Near the reflecting pool, the park settles into a quieter circle. The water is dark enough to mirror the trees and buildings, making it feel like the city is doubled beneath the surface."
+        
+      >
+
+      <!-- 2. 다람쥐 -->
+      <img
+        src="images/madison3.jpg"
+        alt="Gray squirrel on the grass surrounded by a few fallen leaves"
+        data-label="Squirrel on the lawn"
+        data-text1="When I stop to watch the squirrel on the grass, my attention shifts downward. Instead of looking up at the skyline, I find myself following its quick movements. The space around me suddenly feels smaller and more intimate."
+        data-text2="The city noise fades into a soft background hum, and the tiny sounds become clearer—the light rustle of paws in the grass, leaves sliding aside, and those short, careful pauses when the squirrel freezes to listen."
+      >
+
+
+    </div>
+
+    <!-- 오른쪽 텍스트 패널 (초기값 = 첫 사진 내용) -->
+    <div class="text-fixed">
+      <div id="current-spot" class="spot-label">Reflecting pool</div>
+
+      <p id="paragraph1">
+        Around the reflecting pool, the park curves into a quiet ring. The water is dark enough to mirror the trees and buildings, so it feels like the city is doubled under the surface.
+      </p>
+
+      <p id="paragraph2">
+        You hear small sounds in layers: metal chairs scraping, low conversations, and the soft splash of water when the wind moves the plants in the middle.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
