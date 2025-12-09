@@ -1,0 +1,116 @@
+/* 페이지 배경색 */
+body {
+  background-color: #ffffff;
+  margin: 0;
+  font-family: "Newsreader", serif;
+}
+
+/* big-container (흰색) */
+.big-container {
+  max-width: 1300px;
+  margin: 40px auto;
+  padding: 24px 32px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 8px;
+  position: relative;
+}
+
+/* 제목 + 브러쉬 */
+.page-title-wrapper {
+  position: fixed;
+  top: 120px;
+  right: 14%;
+  width: 260px;
+  z-index: 50;
+  text-align: left;
+}
+
+/* 제목 텍스트 — Madison과 동일 */
+.page-title {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 200;
+  color: #151515;
+  letter-spacing: 3px;
+  margin: 0 0 8px 0;
+  position: relative;
+  z-index: 2;
+  right: 30%;
+}
+
+/* 브러쉬 이미지 */
+.title-brush {
+  width: 420px;
+  display: block;
+  position: relative;
+  left: -90px;
+  top: -120px;
+  z-index: 1;
+}
+
+/* 이미지 컬럼 (margin-left = 120px) */
+.image-column {
+  width: 650px;
+  max-width: 75vw;
+  margin-left: 120px;
+  margin-bottom: 40px;
+  margin-top: 65px;
+}
+
+.image-column img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 24px;
+}
+
+/* 오른쪽 고정 텍스트 박스 (right = 19%) */
+.text-fixed {
+  position: fixed;
+  top: 220px;
+  right: 19%;
+  width: 260px;
+  max-width: 28vw;
+  text-align: left;
+  color: #151515;
+}
+
+/* spot 라벨 */
+.spot-label {
+  font-size: 13px;
+  opacity: 0.7;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+/* 본문 텍스트 (Madison 동일) */
+.text-fixed p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+/* 반응형 */
+@media (max-width: 1200px) {
+  .big-container {
+    margin: 16px;
+    padding: 16px;
+  }
+
+  .image-column {
+    width: auto;
+    max-width: 90vw;
+    margin: 0 auto 20px auto;
+  }
+
+  .text-fixed,
+  .page-title-wrapper {
+    position: static;
+    width: auto;
+    max-width: 90vw;
+    margin: 0 auto 16px auto;
+    text-align: left;
+  }
+}
