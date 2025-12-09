@@ -116,24 +116,24 @@ svg#Layer_1 {
   opacity: 1;
 }
 
-/* 🔥 핫스팟 깜빡임 애니메이션 */
+/* 🔥 색만 깜빡이는 애니메이션 (크기 변화 없음) */
 @keyframes hotspotPulse {
   0% {
-    r: var(--r);
     opacity: 1;
+    fill: #00ff00; /* 기본 초록 */
   }
   50% {
-    r: calc(var(--r) * 1.25);
-    opacity: 0.5;
+    opacity: 0.4;
+    fill: #66ff66; /* 조금 밝은 초록 */
   }
   100% {
-    r: var(--r);
     opacity: 1;
+    fill: #00ff00;
   }
 }
 
-/* 🔥 hover 시 pulse 효과 */
 .park-hotspot.pulsing {
   animation: hotspotPulse 0.8s ease-in-out infinite;
 }
+
 
