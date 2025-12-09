@@ -134,4 +134,11 @@ svg#Layer_1 {
   animation: hotspotPulse 0.8s ease-in-out infinite;
 }
 
+/* 🔥 인포박스/텍스트/선 전부 숨기기 */
+.info-box-rect,
+.info-title,
+.info-line,
+.info-connector {
+  display: none;
+}
 
