@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Central Park</title>
+
+  <!-- 폰트: 마샤랑 동일 (Cormorant Garamond + Ubuntu) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Ubuntu:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  >
+<link
+  href="https://fonts.googleapis.com/css2?family=Orbitron:wght@200;400;600&family=Newsreader:wght@200;300;400;500&display=swap"
+  rel="stylesheet"
+/>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="central.css">
+
+  <!-- JS: 이름을 script.js 로 맞출게 -->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <div class="big-container">
+
+    <!-- 제목 + 브러쉬 세트 (sticky) -->
+    <div class="page-title-wrapper">
+      <h1 class="page-title">Central Park</h1>
+      
+    </div>
+
+    <!-- 왼쪽 이미지들 -->
+    <div class="image-column">
+
+      <!-- 1. view 먼저 -->
+      <img
+        src="images/Centralparkview.jpg"
+        alt="Wide open grass field in Central Park with skyline"
+        data-label="Open field and skyline"
+        data-text1="Stepping into the open field, the skyline forms a long clean row above the trees. The grass stretches across the space like a quiet buffer separating the city from the people."
+        data-text2="Voices blend into a single hum, with only scattered details standing out — a dog bark, wheels on the path, someone calling out from far across the field."
+      >
+
+      <!-- 2. tree 나중 -->
+      <img
+        src="images/centralparktree.jpg"
+        alt="People sitting under a large tree in Central Park"
+        data-label="Shade under the tree"
+        data-text1="Under the big tree, the crowd gathers in a looser, shaded ring. The branches hang low enough that you feel partially hidden from the rest of the park."
+        data-text2="Here the sound softens. Conversations stay close, music is muffled, and footsteps disappear into the grass. It feels slower and more insulated than the open field."
+      >
+
+    </div>
+
+    <!-- 오른쪽 텍스트 패널 -->
+    <div class="text-fixed">
+      <div id="current-spot" class="spot-label">Open field and skyline</div>
+
+      <p id="paragraph1">
+        Stepping into the open field, the skyline forms a long clean row above the trees. The grass stretches across the space like a quiet buffer separating the city from the people.
+      </p>
+
+      <p id="paragraph2">
+        Voices blend into a single hum, with only scattered details standing out — a dog bark, wheels on the path, someone calling out from far across the field.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
