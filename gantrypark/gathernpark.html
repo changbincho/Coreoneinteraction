@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gantry Park</title>
+
+  <!-- Fonts: 제목 Cormorant, 본문 Ubuntu -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Ubuntu:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  >
+<link
+  href="https://fonts.googleapis.com/css2?family=Newsreader:wght@200;300;400;500&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Orbitron:wght@200;400;600&display=swap"
+  rel="stylesheet"
+/>
+
+  <link rel="stylesheet" href="gantry.css">
+  <script src="gantry.js" defer></script>
+</head>
+
+<body>
+
+  <div class="big-container">
+
+    <!-- 제목 + 브러쉬 -->
+    <div class="page-title-wrapper">
+      <h1 class="page-title">Gantry Park</h1>
+      
+    </div>
+
+    <!-- 왼쪽 이미지 컬럼 -->
+    <div class="image-column">
+      
+
+      <!-- 3. 나무 아래 벤치 뷰 -->
+      <img
+        src="images/zelcovatree.jpg"
+        alt="Tree framing the skyline with benches by the water"
+        data-label="Tree and benches"
+        data-text1="Under the tree, the park feels more enclosed. The branches frame the skyline like a loose border, and the benches line up facing the water and the lights."
+        data-text2="It’s quiet enough to notice smaller layers of sound: leaves moving overhead, bikes rolling past on the path, a ferry horn, and the soft echo of voices across the river."
+      >
+      
+      <!-- 2. 펩시 사인 -->
+      <img
+        src="images/pepsicolasign.jpg"
+        alt="Bright red Pepsi-Cola sign glowing at night"
+        data-label="Pepsi-Cola sign"
+        data-text1="Closer to the sign, the red outline takes over your view. The letters feel huge, almost floating above the river, while the apartment windows behind it become a grid of pale, quieter light."
+        data-text2="Here the city hum gets sharper: music leaking from somewhere, a train in the distance, and the buzz of people taking photos and talking near the railing."
+      >
+
+      
+
+      <!-- 1. 스카이라인 전경 -->
+      <img
+        src="images/city manhattan view.jpg"
+        alt="Wide Manhattan skyline across the river at night"
+        data-label="Skyline across the river"
+        data-text1="From the edge of the park, Manhattan feels almost flat, like a line of light stretched across the water. The buildings stack into a band of windows, and the river quietly reflects the whole thing back."
+        data-text2="The loudest sounds are small ones: bits of conversation, a camera shutter, water hitting the rocks, and the low engine noise of a boat cutting through the reflections."
+      >
+    </div>
+
+    <!-- 오른쪽 텍스트 패널 (초기값 = 첫 이미지 내용) -->
+    <div class="text-fixed">
+      <div id="current-spot" class="spot-label">
+        Skyline across the river
+      </div>
+
+      <p id="paragraph1">
+        From the edge of the park, Manhattan feels almost flat, like a line of light stretched across the water. The buildings stack into a band of windows, and the river quietly reflects the whole thing back.
+      </p>
+
+      <p id="paragraph2">
+        The loudest sounds are small ones: bits of conversation, a camera shutter, water hitting the rocks, and the low engine noise of a boat cutting through the reflections.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
