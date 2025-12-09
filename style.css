@@ -116,22 +116,20 @@ svg#Layer_1 {
   opacity: 1;
 }
 
-/* 🔥 색만 깜빡이는 애니메이션 (크기 변화 없음) */
+/* 🔥 색은 건드리지 않고 opacity만 깜빡이는 버전 */
 @keyframes hotspotPulse {
   0% {
     opacity: 1;
-    fill: #00ff00; /* 기본 초록 */
   }
   50% {
-    opacity: 0.4;
-    fill: #66ff66; /* 조금 밝은 초록 */
+    opacity: 0.35; /* 더 연해졌다가 */
   }
   100% {
-    opacity: 1;
-    fill: #00ff00;
+    opacity: 1; /* 다시 원래대로 */
   }
 }
 
+/* hover pulse 적용 */
 .park-hotspot.pulsing {
   animation: hotspotPulse 0.8s ease-in-out infinite;
 }
