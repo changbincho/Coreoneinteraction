@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Tompkins Square Park</title>
+
+  <!-- 🔥 폰트: Newsreader + Orbitron (완전 분리 로드) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:wght@200;300;400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@200;300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="tompkins.css" />
+
+  <!-- JS (scroll-text 공통 로직) -->
+  <script src="tompkins.js" defer></script>
+</head>
+
+<body>
+  <div class="big-container">
+
+    <!-- 제목 + 브러쉬 -->
+    <div class="page-title-wrapper">
+      <h1 class="page-title">Tompkins Square Park</h1>
+      
+    </div>
+
+    <!-- 왼쪽 이미지들 -->
+    <div class="image-column">
+      
+
+      <img
+        src="images/tompkins2.jpg"
+        alt="Wide path and trees in Tompkins Square Park"
+        data-label="Wide path and trees"
+        data-text1="A little farther from the skate section, the park opens up and feels more relaxed. The paths get wider, and the trees form a loose canopy above people walking their dogs or passing through."
+        data-text2="The noise from the skate area fades into the background, and smaller sounds take over—footsteps, leashes tapping, bits of conversation drifting by."
+      >
+
+      <img
+        src="images/tompkins4.jpg"
+        alt="Evening walkway in Tompkins Square Park"
+        data-label="Evening walkway"
+        data-text1="As the sky gets darker, the lamps and nearby windows start to pull more attention. The park feels quieter and a bit more focused on whatever’s close by."
+        data-text2=""
+      >
+      
+      <img
+        src="images/tompkins1.jpg"
+        alt="Skate park area in Tompkins Square Park"
+        data-label="Skate park area"
+        data-text1="When I first walked up to the skate area, it honestly felt a bit intimidating. The whole place was dark because the streetlamps were off, and for a second I wondered if I even should’ve come in."
+        data-text2="But then the lights suddenly turned on, and the space looked completely different—much brighter and actually pretty nice. I was surprised by how many people were skating and didn’t even realize there was a full skate park here. It felt unexpectedly lively."
+      >
+    </div>
+
+    <!-- 오른쪽 텍스트 패널 -->
+    <div class="text-fixed">
+      <div id="current-spot" class="spot-label">Skate park area</div>
+
+      <p id="paragraph1">
+        When I first walked up to the skate area, it honestly felt a bit intimidating.
+      </p>
+
+      <p id="paragraph2">
+        Boards hitting the ground, wheels sliding, and quick reactions filled the whole space.
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
