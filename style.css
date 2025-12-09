@@ -115,3 +115,25 @@ svg#Layer_1 {
 .info-visible {
   opacity: 1;
 }
+
+/* 🔥 핫스팟 깜빡임 애니메이션 */
+@keyframes hotspotPulse {
+  0% {
+    r: var(--r);
+    opacity: 1;
+  }
+  50% {
+    r: calc(var(--r) * 1.25);
+    opacity: 0.5;
+  }
+  100% {
+    r: var(--r);
+    opacity: 1;
+  }
+}
+
+/* 🔥 hover 시 pulse 효과 */
+.park-hotspot.pulsing {
+  animation: hotspotPulse 0.8s ease-in-out infinite;
+}
+
