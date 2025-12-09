@@ -122,3 +122,31 @@ body {
     right: auto;
   }
 }
+.home-button {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  background: #111214;   /* 진한 배경 */
+  color: #ffffff;        /* 흰 글자 */
+
+  font-family: "Ubuntu", sans-serif;  /* 이미 로드된 폰트 사용 */
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+
+  transition: 0.2s ease;
+  z-index: 99999;
+}
+
+.home-button:hover {
+  background: #ffffff;
+  color: #111214;
+  border-color: #111214;
+}
