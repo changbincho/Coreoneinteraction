@@ -135,7 +135,7 @@ body {
   background: #111214;      /* 진한 배경 */
   color: #ffffff;           /* 흰 글자 */
 
-  font-family: "Newsreader", serif;  /* 이미 로드된 폰트 사용 */
+  font-family: "Ubuntu", sans-serif;  /* 이미 로드된 폰트 사용 */
   font-size: 13px;
   letter-spacing: 0.12em;
   text-decoration: none;
