@@ -114,6 +114,7 @@ body {
     text-align: left;
   }
 }
+
 .home-button {
   position: fixed;
   top: 24px;
@@ -142,5 +143,6 @@ body {
   color: #111214;
   border-color: #111214;
 }
+
 
 
